@@ -1,0 +1,218 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070a13" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e1035" />
+    </linearGradient>
+
+    <radialGradient id="nebula-cyan" cx="20%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="nebula-purple" cx="80%" cy="70%" r="50%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Title Gradient -->
+    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <!-- Node Glow Gradients -->
+    <radialGradient id="node-glow-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.8" />
+      <stop offset="60%" stop-color="#0284c7" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="node-glow-purple" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c084fc" stop-opacity="0.8" />
+      <stop offset="60%" stop-color="#9333ea" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#9333ea" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="node-glow-emerald" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.8" />
+      <stop offset="60%" stop-color="#059669" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#059669" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Card Background Gradient -->
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95" />
+    </linearGradient>
+
+    <!-- Drop Shadows -->
+    <filter id="shadow-main" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#000000" flood-opacity="0.6" />
+    </filter>
+
+    <filter id="glow-filter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <style>
+      @keyframes flowEdge {
+        to { stroke-dashoffset: -80; }
+      }
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.4; transform: scale(1); }
+        50% { opacity: 0.85; transform: scale(1.15); }
+      }
+      @keyframes orbitNode {
+        0% { transform: rotate(0deg) translateX(45px) rotate(0deg); }
+        100% { transform: rotate(360deg) translateX(45px) rotate(-360deg); }
+      }
+      .edge-flow {
+        stroke-dasharray: 6, 8;
+        animation: flowEdge 12s linear infinite;
+      }
+      .floating-bg {
+        animation: floatSlow 8s ease-in-out infinite;
+      }
+      .pulse-beacon {
+        transform-origin: center;
+        animation: pulseGlow 4s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1200" height="420" fill="url(#bg-grad)" rx="16" />
+  <rect width="1200" height="420" fill="url(#nebula-cyan)" rx="16" />
+  <rect width="1200" height="420" fill="url(#nebula-purple)" rx="16" />
+
+  <!-- Grid Overlay -->
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="70" x2="1200" y2="70" />
+    <line x1="0" y1="140" x2="1200" y2="140" />
+    <line x1="0" y1="210" x2="1200" y2="210" />
+    <line x1="0" y1="280" x2="1200" y2="280" />
+    <line x1="0" y1="350" x2="1200" y2="350" />
+    <line x1="150" y1="0" x2="150" y2="420" />
+    <line x1="300" y1="0" x2="300" y2="420" />
+    <line x1="450" y1="0" x2="450" y2="420" />
+    <line x1="600" y1="0" x2="600" y2="420" />
+    <line x1="750" y1="0" x2="750" y2="420" />
+    <line x1="900" y1="0" x2="900" y2="420" />
+    <line x1="1050" y1="0" x2="1050" y2="420" />
+  </g>
+
+  <!-- Animated Dynamic Background Knowledge Graph Network (strictly behind text) -->
+  <g class="floating-bg" opacity="0.65">
+    <!-- Left Graph Cluster -->
+    <path d="M 80,120 L 160,70 L 240,130 L 170,210 Z" fill="none" stroke="#0ea5e9" stroke-width="1.5" class="edge-flow" />
+    <line x1="160" y1="70" x2="170" y2="210" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.4" />
+    <line x1="80" y1="120" x2="240" y2="130" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.4" />
+    <line x1="240" y1="130" x2="290" y2="90" stroke="#818cf8" stroke-width="1.5" class="edge-flow" />
+    <line x1="170" y1="210" x2="120" y2="310" stroke="#34d399" stroke-width="1.5" class="edge-flow" />
+    <line x1="120" y1="310" x2="220" y2="340" stroke="#34d399" stroke-width="1" stroke-opacity="0.4" />
+
+    <!-- Left Graph Nodes -->
+    <circle cx="80" cy="120" r="16" fill="url(#node-glow-cyan)" class="pulse-beacon" />
+    <circle cx="80" cy="120" r="6" fill="#38bdf8" />
+    <circle cx="160" cy="70" r="20" fill="url(#node-glow-cyan)" class="pulse-beacon" />
+    <circle cx="160" cy="70" r="8" fill="#0284c7" />
+    <circle cx="240" cy="130" r="18" fill="url(#node-glow-purple)" class="pulse-beacon" />
+    <circle cx="240" cy="130" r="7" fill="#a855f7" />
+    <circle cx="170" cy="210" r="22" fill="url(#node-glow-cyan)" class="pulse-beacon" />
+    <circle cx="170" cy="210" r="9" fill="#0ea5e9" />
+    <circle cx="120" cy="310" r="16" fill="url(#node-glow-emerald)" class="pulse-beacon" />
+    <circle cx="120" cy="310" r="6" fill="#10b981" />
+    <circle cx="220" cy="340" r="14" fill="url(#node-glow-emerald)" />
+    <circle cx="220" cy="340" r="5" fill="#34d399" />
+    <circle cx="290" cy="90" r="14" fill="url(#node-glow-purple)" />
+    <circle cx="290" cy="90" r="5" fill="#c084fc" />
+
+    <!-- Right Graph Cluster -->
+    <path d="M 1120,130 L 1030,80 L 960,150 L 1020,240 Z" fill="none" stroke="#a855f7" stroke-width="1.5" class="edge-flow" />
+    <line x1="1030" y1="80" x2="1020" y2="240" stroke="#c084fc" stroke-width="1" stroke-opacity="0.4" />
+    <line x1="1120" y1="130" x2="960" y2="150" stroke="#c084fc" stroke-width="1" stroke-opacity="0.4" />
+    <line x1="960" y1="150" x2="900" y2="100" stroke="#818cf8" stroke-width="1.5" class="edge-flow" />
+    <line x1="1020" y1="240" x2="1070" y2="330" stroke="#38bdf8" stroke-width="1.5" class="edge-flow" />
+    <line x1="1070" y1="330" x2="980" y2="350" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.4" />
+
+    <!-- Right Graph Nodes -->
+    <circle cx="1120" cy="130" r="18" fill="url(#node-glow-purple)" class="pulse-beacon" />
+    <circle cx="1120" cy="130" r="7" fill="#a855f7" />
+    <circle cx="1030" cy="80" r="22" fill="url(#node-glow-purple)" class="pulse-beacon" />
+    <circle cx="1030" cy="80" r="9" fill="#9333ea" />
+    <circle cx="960" cy="150" r="20" fill="url(#node-glow-cyan)" class="pulse-beacon" />
+    <circle cx="960" cy="150" r="8" fill="#38bdf8" />
+    <circle cx="1020" cy="240" r="24" fill="url(#node-glow-purple)" class="pulse-beacon" />
+    <circle cx="1020" cy="240" r="10" fill="#c084fc" />
+    <circle cx="1070" cy="330" r="16" fill="url(#node-glow-cyan)" class="pulse-beacon" />
+    <circle cx="1070" cy="330" r="6" fill="#0284c7" />
+    <circle cx="980" cy="350" r="14" fill="url(#node-glow-cyan)" />
+    <circle cx="980" cy="350" r="5" fill="#38bdf8" />
+    <circle cx="900" cy="100" r="14" fill="url(#node-glow-purple)" />
+    <circle cx="900" cy="100" r="5" fill="#e879f9" />
+  </g>
+
+  <!-- Foreground Content Container (Guaranteed in foreground with high contrast) -->
+  <g id="foreground" transform="translate(600, 205)" text-anchor="middle" filter="url(#shadow-main)">
+    <!-- Category Super-title -->
+    <g transform="translate(0, -95)">
+      <rect x="-190" y="-16" width="380" height="32" rx="16" fill="#1e293b" fill-opacity="0.8" stroke="#38bdf8" stroke-width="1.2" />
+      <circle cx="-165" cy="0" r="5" fill="#34d399" />
+      <text x="10" y="5" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" letter-spacing="2">
+        KNOWLEDGE LAYER FOR AGENTIC AI
+      </text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="-20" fill="url(#title-grad)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="900" letter-spacing="1">
+      Awesome Multi-Agent Knowledge Graphs
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="22" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="500" letter-spacing="0.3">
+      Curated Directory of Governed Ontologies, GraphRAG Systems &amp; Autonomous Agent Memory
+    </text>
+
+    <text x="0" y="48" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="400">
+      Bridging Git-Style Versioning, Dynamic Reasoning Memory, and Multi-Agent Orchestration
+    </text>
+
+    <!-- Feature Badges Row -->
+    <g transform="translate(0, 92)">
+      <!-- Pill 1 -->
+      <g transform="translate(-360, 0)">
+        <rect x="-80" y="-15" width="160" height="30" rx="15" fill="#0f172a" fill-opacity="0.9" stroke="#38bdf8" stroke-width="1" />
+        <text x="0" y="5" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="600">⚡ GraphRAG Engines</text>
+      </g>
+      <!-- Pill 2 -->
+      <g transform="translate(-180, 0)">
+        <rect x="-85" y="-15" width="170" height="30" rx="15" fill="#0f172a" fill-opacity="0.9" stroke="#818cf8" stroke-width="1" />
+        <text x="0" y="5" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="600">🤖 Agentic AI Memory</text>
+      </g>
+      <!-- Pill 3 -->
+      <g transform="translate(0, 0)">
+        <rect x="-80" y="-15" width="160" height="30" rx="15" fill="#0f172a" fill-opacity="0.9" stroke="#c084fc" stroke-width="1" />
+        <text x="0" y="5" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="600">🕸️ Six-Layer Ontologies</text>
+      </g>
+      <!-- Pill 4 -->
+      <g transform="translate(180, 0)">
+        <rect x="-85" y="-15" width="170" height="30" rx="15" fill="#0f172a" fill-opacity="0.9" stroke="#34d399" stroke-width="1" />
+        <text x="0" y="5" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="600">🔌 MCP Tool Servers</text>
+      </g>
+      <!-- Pill 5 -->
+      <g transform="translate(360, 0)">
+        <rect x="-80" y="-15" width="160" height="30" rx="15" fill="#0f172a" fill-opacity="0.9" stroke="#f472b6" stroke-width="1" />
+        <text x="0" y="5" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="600">🛡️ Git-Style Auditing</text>
+      </g>
+    </g>
+  </g>
+</svg>
