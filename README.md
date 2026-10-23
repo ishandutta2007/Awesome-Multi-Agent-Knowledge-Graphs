@@ -2,7 +2,7 @@
 
 # Awesome-Multi-Agent-Knowledge-Graphs
 
-# Top Multi-Agent Knowledge Graphs Ecosystem
+## Top Multi-Agent Knowledge Graphs Ecosystem
 
 **Curated List of SaaS Products & Open-Source GitHub Projects**  
 *Focused on Git-Style Agent Collaboration, Six-Layer Business Ontology & GraphRAG Retrieval*  
